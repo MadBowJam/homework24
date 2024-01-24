@@ -41,7 +41,6 @@ class Carousel {
     this.isPlaying ? this._pauseVisible() : this._playVisible();
   }
 
-
   _initIndicators() {
     let indicators = document.createElement('ol');
     indicators.setAttribute('class', 'indicators');
@@ -114,11 +113,7 @@ class Carousel {
   }
 
   pausePlay() {
-    if (this.isPlaying) {
-      this.pause();
-    } else {
-      this.play();
-    }
+    this.isPlaying ? this.pause() : this.play();
   }
 
   pause() {

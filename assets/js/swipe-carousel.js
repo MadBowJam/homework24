@@ -4,32 +4,25 @@ class SwipeCarousel extends Carousel {
   constructor(...args) {
     super(...args);
     this.slidesContainer = this.slideItems[0].parentElement;
+    this.container.addEventListener('touchstart', (e) => this._swipe(e, 'start'));
+    this.slidesContainer.addEventListener('mousedown', (e) => this._swipe(e, 'start'));
+    this.container.addEventListener('touchend', (e) => this._swipe(e, 'end'));
+    this.slidesContainer.addEventListener('mouseup', (e) => this._swipe(e, 'end'));
   }
 
-  /* private, _initListeners function */
-  _initListeners() {
-    super._initListeners();
-    this.container.addEventListener('touchstart', this._swipeStart.bind(this));
-    this.slidesContainer.addEventListener('mousedown', this._swipeStart.bind(this));
-    this.container.addEventListener('touchend', this._swipeEnd.bind(this));
-    this.slidesContainer.addEventListener('mouseup', this._swipeEnd.bind(this));
-  }
+  _swipe(e, phase) {
+    const posX = e instanceof MouseEvent ? e.pageX : e.changedTouches[0].pageX;
 
-  /* private, _swipeStart function */
-  _swipeStart(e) {
-    this.startPosX = e instanceof MouseEvent
-        ? e.pageX
-        : e.changedTouches[0].pageX;
-  }
+    if (phase === 'start') {
+      this.startPosX = posX;
+    } else if (phase === 'end') {
+      this.endPosX = posX;
+      const diff = this.endPosX - this.startPosX;
 
-  /* private, _swipeEnd function */
-  _swipeEnd(e) {
-    this.endPosX = e instanceof MouseEvent
-        ? e.pageX
-        : e.changedTouches[0].pageX;
-
-    if (this.endPosX - this.startPosX > 100) this.prev();
-    if (this.endPosX - this.startPosX < -100) this.next();
+      if (Math.abs(diff) > 100) {
+        diff > 0 ? this.prev() : this.next();
+      }
+    }
   }
 }
 
