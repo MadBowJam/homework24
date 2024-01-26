@@ -97,3 +97,9 @@ body {
 .indicator.active {
   background-color: tomato;
 }
+@media screen and (max-width: 800px) {
+  .indicator {
+    min-width: 15px;
+    min-height: 15px;
+  }
+}
