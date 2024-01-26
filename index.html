@@ -1,30 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Slider JS</title>
-  <link rel="stylesheet" href="libs/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="carousel" class="carousel">
-  <div class="slides">
-    <div class="slide active" style="background-image: url(assets/img/image1.jpg)"><!--<a href="#"></a>--></div>
-    <div class="slide" style="background-image: url(assets/img/image2.jpg)"><!--<a href="#"></a>--></div>
-    <div class="slide" style="background-image: url(assets/img/image3.jpg)"><!--<a href="#"></a>--></div>
-    <div class="slide" style="background-image: url(assets/img/image4.jpg)"><!--<a href="#"></a>--></div>
-    <div class="slide" style="background-image: url(assets/img/image5.jpg)"><!--<a href="#"></a>--></div>
-  </div>
-</div>
+  <div id="carousel" class="carousel">
+    <div id="slides-container" class="slides">
+      <div class="slide active">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </div>
 
-<script src="assets/js/index.js" type="module"></script>
+    <div id="controls-container" class="controls">
+      <span id="pause-btn" class="control control-pause">Pause</span>
+      <span id="prev-btn" class="control control-prev">Prev</span>
+      <span id="next-btn" class="control control-next">Next</span>
+    </div>
+
+    <div id="indicators-container" class="indicators">
+      <div class="indicator active" data-slide-to="0"></div>
+      <div class="indicator" data-slide-to="1"></div>
+      <div class="indicator" data-slide-to="2"></div>
+      <div class="indicator" data-slide-to="3"></div>
+      <div class="indicator" data-slide-to="4"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+
 </body>
+
 </html>

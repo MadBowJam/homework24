@@ -1,12 +1,17 @@
 {
-  "name": "js-native-slider",
+  "name": "javascript-airbnb-eslint",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "repository": "https://github.com/Alecto/js-native-slider.git",
-  "author": "Alecto <fomenkoandrey@inbox.ru>",
-  "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
   }
 }
