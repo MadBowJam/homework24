@@ -84,18 +84,23 @@ body {
 .control {
   display: block;
   background-color: #cccccc;
-  padding: 0.5em;
+  padding: 0.25em;
   border-radius: 7px;
   cursor: pointer;
   user-select: none;
-  min-width: 40px;
-  min-height: 40px;
+  min-width: 34px;
+  min-height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
 }
 .indicator.active {
   background-color: tomato;
+}
+.control-pause > span {
+  position: absolute;
+  opacity: 0;
 }
 @media screen and (max-width: 800px) {
   .indicator {
