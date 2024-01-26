@@ -96,10 +96,10 @@
     prevBtn.addEventListener('click', prevHandler)
     nextBtn.addEventListener('click', nextHandler)
     indicatorsContainer.addEventListener('click', indicateHandler)
-    container.addEventListener('touchstart', swipeStart)
-    container.addEventListener('mousedown', swipeStart)
-    container.addEventListener('touchend', swipeEnd)
-    container.addEventListener('mouseup', swipeEnd)
+    container.addEventListener('touchstart', swipeStart, { passive: true });
+    container.addEventListener('mousedown', swipeStart, { passive: true });
+    container.addEventListener('touchend', swipeEnd, { passive: true });
+    container.addEventListener('mouseup', swipeEnd, { passive: true });
     document.addEventListener('keydown', pressKey)
   }
 
